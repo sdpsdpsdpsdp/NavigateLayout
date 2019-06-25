@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="NavigateBar">
+        <attr name="containerId" format="integer|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="NavigateLayout">
+        <attr name="navigateLayoutHeight" format="dimension|reference" />
+        <attr name="navigateLayoutBgColor" format="color|reference" />
+        <attr name="navigateAddViewResId" format="integer|reference" />
+        <attr name="navigateAddViewWidthAndHeight" format="dimension|reference" />
+        <attr name="navigateBarHeight" format="dimension|reference" />
+        <attr name="navigateBarSelectedColor" format="color|reference" />
+        <attr name="navigateBarUnselectedColor" format="color|reference" />
+        <attr name="navigateBarTitleSize" format="dimension" />
+    </declare-styleable>
+</resources>

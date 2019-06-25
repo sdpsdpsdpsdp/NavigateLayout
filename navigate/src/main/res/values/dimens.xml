@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="navigate_tab_icon_size">24dp</dimen>
+    <dimen name="navigate_tab_text_size">10sp</dimen>
+    <dimen name="navigate_tab_text_margin_bottom">4dp</dimen>
+</resources>
