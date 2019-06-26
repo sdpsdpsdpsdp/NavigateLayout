@@ -2,6 +2,7 @@ package com.laisontech.navigate;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.os.Bundle;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.StringRes;
 import android.util.AttributeSet;
@@ -99,8 +100,32 @@ public class NavigateLayout extends RelativeLayout {
         mNavigateBar.setSelectedTabTextColor(mNavBarSelectedColor);
     }
 
+    /**
+     * 恢复 bundle
+     */
+
+    public void restoreBundleInstance(Bundle bundle) {
+        if (mNavigateBar != null && bundle != null) {
+            mNavigateBar.onRestoreInstanceState(bundle);
+        }
+    }
+
+    /**
+     * 保存 bundle
+     */
+    public void saveBundleInstance(Bundle bundle) {
+        if (mNavigateBar != null && bundle != null) {
+            mNavigateBar.onSaveInstanceState(bundle);
+        }
+    }
+
+    /**
+     * 设置数据
+     */
     public void setNavResource(List<TabResource> tabResources) {
         if (tabResources == null || tabResources.size() < 1) return;
+
+        //设置数据
         for (TabResource resource : tabResources) {
             mNavigateBar.addTab(resource.getFragmentClass(), resource.getTabParam());
         }
@@ -126,6 +151,7 @@ public class NavigateLayout extends RelativeLayout {
     public void setAddViewClickListener(OnAddViewClickListener addViewClickListener) {
         this.mAddViewClickListener = addViewClickListener;
     }
+
 
     private int color(Context context, int resId) {
         return context.getResources().getColor(resId);
