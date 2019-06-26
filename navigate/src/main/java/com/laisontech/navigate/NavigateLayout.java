@@ -21,14 +21,14 @@ import java.util.List;
  * Des：
  */
 public class NavigateLayout extends RelativeLayout {
-    private int mNavLayoutHeight = 100;
+    private int mNavLayoutHeight ;
     private int mNavLayoutBgColor;
     private int mAddViewResId;
-    private int mAddViewWidthAndHeight = 70;
-    private int mNavBarHeight = 50;
+    private int mAddViewWidthAndHeight ;
+    private int mNavBarHeight;
     private int mNavBarSelectedColor;
     private int mNavBarUnselectedColor;
-    private  float mNavBarTextSize = 10;
+    private static float mNavBarTextSize;
     private NavigateBar mNavigateBar;
     private ImageView mAddView;
     private RelativeLayout mNavLayout;
@@ -47,7 +47,7 @@ public class NavigateLayout extends RelativeLayout {
         super(context, attrs, defStyleAttr);
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.NavigateLayout);
 
-        this.mNavLayoutHeight = (int) typedArray.getDimension(R.styleable.NavigateLayout_navigateLayoutHeight, mNavLayoutHeight);
+        this.mNavLayoutHeight = (int) typedArray.getDimension(R.styleable.NavigateLayout_navigateLayoutHeight, 100);
         this.mNavLayoutHeight = dp2px(context, mNavLayoutHeight);
 
         this.mNavLayoutBgColor = android.R.color.transparent;
@@ -56,10 +56,10 @@ public class NavigateLayout extends RelativeLayout {
         this.mAddViewResId = R.drawable.default_drawable_add;
         this.mAddViewResId = typedArray.getResourceId(R.styleable.NavigateLayout_navigateAddViewResId, mAddViewResId);
 
-        this.mAddViewWidthAndHeight = (int) typedArray.getDimension(R.styleable.NavigateLayout_navigateBarHeight, mAddViewWidthAndHeight);
+        this.mAddViewWidthAndHeight = (int) typedArray.getDimension(R.styleable.NavigateLayout_navigateBarHeight, 70);
         this.mAddViewWidthAndHeight = dp2px(context, mAddViewWidthAndHeight);
 
-        this.mNavBarHeight = (int) typedArray.getDimension(R.styleable.NavigateLayout_navigateBarHeight, mNavBarHeight);
+        this.mNavBarHeight = (int) typedArray.getDimension(R.styleable.NavigateLayout_navigateBarHeight, 50);
         this.mNavBarHeight = dp2px(context, mNavBarHeight);
 
         this.mNavBarSelectedColor = android.R.color.black;
@@ -68,7 +68,7 @@ public class NavigateLayout extends RelativeLayout {
         this.mNavBarUnselectedColor = android.R.color.darker_gray;
         this.mNavBarUnselectedColor = typedArray.getColor(R.styleable.NavigateLayout_navigateBarUnselectedColor, color(context, mNavBarUnselectedColor));
 
-        mNavBarTextSize = typedArray.getDimension(R.styleable.NavigateLayout_navigateBarTitleSize, mNavBarTextSize);
+        mNavBarTextSize = typedArray.getDimension(R.styleable.NavigateLayout_navigateBarTitleSize, 10);
         mNavBarTextSize = sp2px(context, mNavBarTextSize);
 
         typedArray.recycle();
@@ -157,7 +157,7 @@ public class NavigateLayout extends RelativeLayout {
         return context.getResources().getColor(resId);
     }
 
-    public  class TabResource {
+    public static class TabResource {
         private Class fragmentClass;
         private NavigateBar.TabParam tabParam;
 
