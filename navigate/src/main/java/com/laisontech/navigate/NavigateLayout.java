@@ -28,7 +28,7 @@ public class NavigateLayout extends RelativeLayout {
     private int mNavBarHeight = 50;
     private int mNavBarSelectedColor;
     private int mNavBarUnselectedColor;
-    private static float mNavBarTextSize = 10;
+    private  float mNavBarTextSize = 10;
     private NavigateBar mNavigateBar;
     private ImageView mAddView;
     private RelativeLayout mNavLayout;
@@ -157,7 +157,7 @@ public class NavigateLayout extends RelativeLayout {
         return context.getResources().getColor(resId);
     }
 
-    public static class TabResource {
+    public  class TabResource {
         private Class fragmentClass;
         private NavigateBar.TabParam tabParam;
 
