@@ -21,10 +21,10 @@ import java.util.List;
  * Des：
  */
 public class NavigateLayout extends RelativeLayout {
-    private int mNavLayoutHeight ;
+    private int mNavLayoutHeight;
     private int mNavLayoutBgColor;
     private int mAddViewResId;
-    private int mAddViewWidthAndHeight ;
+    private int mAddViewWidthAndHeight;
     private int mNavBarHeight;
     private int mNavBarSelectedColor;
     private int mNavBarUnselectedColor;
@@ -116,6 +116,15 @@ public class NavigateLayout extends RelativeLayout {
     public void saveBundleInstance(Bundle bundle) {
         if (mNavigateBar != null) {
             mNavigateBar.onSaveInstanceState(bundle);
+        }
+    }
+
+    /**
+     * 按钮点击事件
+     */
+    public void setOnTabClickListener(NavigateBar.OnTabSelectedListener listener) {
+        if (mNavigateBar != null) {
+            mNavigateBar.setTabSelectListener(listener);
         }
     }
 
