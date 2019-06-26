@@ -338,11 +338,11 @@ public class NavigateBar extends LinearLayout implements View.OnClickListener {
      * ViewHolder
      */
     public static class ViewHolder {
-        String tag;
+        public String tag;
         TabParam pageParam;
-        ImageView tabIcon;
-        TextView tabTitle;
-        Class fragmentClass;
+        public ImageView tabIcon;
+        public TextView tabTitle;
+        public Class fragmentClass;
         int tabIndex;
     }
 
