@@ -88,15 +88,24 @@ public class NavigateBar extends LinearLayout implements View.OnClickListener {
         ViewHolder holder = new ViewHolder();
         holder.tabIndex = this.mViewHolderList.size();
         holder.fragmentClass = frameLayoutClass;
-        holder.tag = tabParam.title;
+        if (TextUtils.isEmpty(tabParam.title)) {
+            int titleResId = tabParam.titleResId;
+            if (titleResId == 0) {
+                holder.tag = "" + System.currentTimeMillis();
+            } else {
+                holder.tag = "" + titleResId;
+            }
+        } else {
+            holder.tag = tabParam.title;
+        }
         holder.pageParam = tabParam;
         holder.tabIcon = view.findViewById(R.id.tab_icon);
         holder.tabTitle = view.findViewById(R.id.tab_title);
 
         if (TextUtils.isEmpty(tabParam.title)) {
-            if (tabParam.titleResId==0){
+            if (tabParam.titleResId == 0) {
                 holder.tabTitle.setVisibility(View.INVISIBLE);
-            }else {
+            } else {
                 holder.tabTitle.setText(tabParam.titleResId);
             }
         } else {
