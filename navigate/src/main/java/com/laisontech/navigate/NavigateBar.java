@@ -94,7 +94,11 @@ public class NavigateBar extends LinearLayout implements View.OnClickListener {
         holder.tabTitle = view.findViewById(R.id.tab_title);
 
         if (TextUtils.isEmpty(tabParam.title)) {
-            holder.tabTitle.setVisibility(View.INVISIBLE);
+            if (tabParam.titleResId==0){
+                holder.tabTitle.setVisibility(View.INVISIBLE);
+            }else {
+                holder.tabTitle.setText(tabParam.titleResId);
+            }
         } else {
             holder.tabTitle.setText(tabParam.title);
         }
