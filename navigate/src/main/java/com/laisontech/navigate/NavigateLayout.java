@@ -105,7 +105,7 @@ public class NavigateLayout extends RelativeLayout {
      */
 
     public void restoreBundleInstance(Bundle bundle) {
-        if (mNavigateBar != null && bundle != null) {
+        if (mNavigateBar != null) {
             mNavigateBar.onRestoreInstanceState(bundle);
         }
     }
@@ -114,7 +114,7 @@ public class NavigateLayout extends RelativeLayout {
      * 保存 bundle
      */
     public void saveBundleInstance(Bundle bundle) {
-        if (mNavigateBar != null && bundle != null) {
+        if (mNavigateBar != null) {
             mNavigateBar.onSaveInstanceState(bundle);
         }
     }
