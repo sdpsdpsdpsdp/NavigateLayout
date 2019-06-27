@@ -56,7 +56,7 @@ public class NavigateLayout extends RelativeLayout {
         this.mAddViewResId = R.drawable.default_drawable_add;
         this.mAddViewResId = typedArray.getResourceId(R.styleable.NavigateLayout_navigateAddViewResId, mAddViewResId);
 
-        this.mAddViewWidthAndHeight = (int) typedArray.getDimension(R.styleable.NavigateLayout_navigateBarHeight, 70);
+        this.mAddViewWidthAndHeight = (int) typedArray.getDimension(R.styleable.NavigateLayout_navigateAddViewWidthAndHeight, 70);
         this.mAddViewWidthAndHeight = dp2px(context, mAddViewWidthAndHeight);
 
         this.mNavBarHeight = (int) typedArray.getDimension(R.styleable.NavigateLayout_navigateBarHeight, 50);
