@@ -47,20 +47,15 @@ public class NavigateLayout extends RelativeLayout {
         super(context, attrs, defStyleAttr);
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.NavigateLayout);
 
-        this.mNavLayoutHeight = (int) typedArray.getDimension(R.styleable.NavigateLayout_navigateLayoutHeight, 100);
-        this.mNavLayoutHeight = dp2px(context, mNavLayoutHeight);
+        this.mNavLayoutHeight = (int) typedArray.getDimension(R.styleable.NavigateLayout_navigateLayoutHeight, dp2px(context, 100));
+        this.mAddViewWidthAndHeight = (int) typedArray.getDimension(R.styleable.NavigateLayout_navigateAddViewWidthAndHeight, dp2px(context, 70));
+        this.mNavBarHeight = (int) typedArray.getDimension(R.styleable.NavigateLayout_navigateBarHeight, dp2px(context, 50));
 
         this.mNavLayoutBgColor = android.R.color.transparent;
         this.mNavLayoutBgColor = typedArray.getColor(R.styleable.NavigateLayout_navigateLayoutBgColor, color(context, mNavLayoutBgColor));
 
         this.mAddViewResId = R.drawable.default_drawable_add;
         this.mAddViewResId = typedArray.getResourceId(R.styleable.NavigateLayout_navigateAddViewResId, mAddViewResId);
-
-        this.mAddViewWidthAndHeight = (int) typedArray.getDimension(R.styleable.NavigateLayout_navigateAddViewWidthAndHeight, 70);
-        this.mAddViewWidthAndHeight = dp2px(context, mAddViewWidthAndHeight);
-
-        this.mNavBarHeight = (int) typedArray.getDimension(R.styleable.NavigateLayout_navigateBarHeight, 50);
-        this.mNavBarHeight = dp2px(context, mNavBarHeight);
 
         this.mNavBarSelectedColor = android.R.color.black;
         this.mNavBarSelectedColor = typedArray.getColor(R.styleable.NavigateLayout_navigateBarSelectedColor, color(context, mNavBarSelectedColor));
